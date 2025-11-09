@@ -33,17 +33,34 @@
   </header>
 
   <!-- 🔽 Слайдер "До / После" -->
-<section id="slider" style="padding:40px 20px; text-align:center; background:#fff8f0;">
-  <h2 style="color:#ff8c00; font-size:1.8em; margin-bottom:20px;">До / После</h2>
-  <div class="slider-container" style="max-width:700px; margin:auto; position:relative; overflow:hidden; border-radius:15px;">
-    <div class="slider" style="display:flex; transition:transform 0.5s ease-in-out;">
-      <img src="02.jpg" alt="Диван до чистки" style="width:100%; flex-shrink:0;">
-      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="Диван после чистки" style="width:100%; flex-shrink:0;">
+<section id="before-after" style="text-align:center; padding:40px 15px; background:#fff;">
+  <h2 style="font-size:2em; margin-bottom:25px; color:#333;">До / После</h2>
+
+  <div style="position:relative; display:inline-block; width:100%; max-width:700px; overflow:hidden; border-radius:16px;">
+    <img src="02.jpg" alt="До чистки" style="width:100%; height:auto; display:block;">
+    <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; height:100%;">
+      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="После чистки" style="width:100%; height:auto; display:block;">
     </div>
-    <button class="prev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer;">‹</button>
-    <button class="next" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer;">›</button>
+
+    <input type="range" id="slider" min="0" max="100" value="50"
+      style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+      width:70%; accent-color:orange; cursor:pointer; background:transparent;">
   </div>
+
+  <p style="margin-top:40px; font-size:1.2em; color:#555;">
+    ✨ Диван стал как новый за <strong>30 минут</strong>!
+  </p>
 </section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const wrapper = document.getElementById("slider-wrapper");
+
+  slider.addEventListener("input", () => {
+    wrapper.style.width = slider.value + "%";
+  });
+</script>
+
 
 <script>
 let currentIndex = 0;
