@@ -32,21 +32,41 @@
     <p>Чистим прямо у вас дома — быстро, безопасно, эффективно!</p>
   </header>
 
-  <section id="before-after" class="py-10 bg-white text-center">
-  <h2 class="text-3xl font-bold mb-6 text-gray-800">До / После</h2>
-
-  <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-    <div class="w-full md:w-1/2">
-      <p class="font-semibold mb-2 text-gray-700">До</p>
-      <img src="02.jpg" alt="Диван до чистки" class="rounded-2xl shadow-md w-full">
+  <!-- 🔽 Слайдер "До / После" -->
+<section id="slider" style="padding:40px 20px; text-align:center; background:#fff8f0;">
+  <h2 style="color:#ff8c00; font-size:1.8em; margin-bottom:20px;">До / После</h2>
+  <div class="slider-container" style="max-width:700px; margin:auto; position:relative; overflow:hidden; border-radius:15px;">
+    <div class="slider" style="display:flex; transition:transform 0.5s ease-in-out;">
+      <img src="02.jpg" alt="Диван до чистки" style="width:100%; flex-shrink:0;">
+      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="Диван после чистки" style="width:100%; flex-shrink:0;">
     </div>
-
-    <div class="w-full md:w-1/2">
-      <p class="font-semibold mb-2 text-gray-700">После</p>
-      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="Диван после чистки" class="rounded-2xl shadow-md w-full">
-    </div>
+    <button class="prev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer;">‹</button>
+    <button class="next" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer;">›</button>
   </div>
 </section>
+
+<script>
+let currentIndex = 0;
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slider img');
+const totalSlides = slides.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+// Автоматическая прокрутка каждые 4 секунды
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}, 4000);
+</script>
 
 <section id="before-after" style="text-align:center; padding:50px 20px; background:#fff;">
   <h2 style="font-size:2em; margin-bottom:30px; color:#333;">До / После</h2>
