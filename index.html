@@ -48,6 +48,28 @@
   </div>
 </section>
 
+<section id="before-after" style="text-align:center; padding:50px 20px; background:#fff;">
+  <h2 style="font-size:2em; margin-bottom:30px; color:#333;">До / После</h2>
+  <div style="position:relative; display:inline-block; max-width:800px; width:100%;">
+    <img src="02.jpg" alt="До чистки" style="width:100%; display:block; border-radius:12px;">
+    <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; border-radius:12px;">
+      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="После чистки" style="width:100%; display:block;">
+    </div>
+    <input type="range" id="slider" min="0" max="100" value="50"
+      style="position:absolute; bottom:-40px; left:50%; transform:translateX(-50%);
+      width:60%; accent-color:orange; cursor:pointer;">
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const wrapper = document.getElementById("slider-wrapper");
+  slider.addEventListener("input", () => {
+    wrapper.style.width = slider.value + "%";
+  });
+</script>
+
+  
   <section class="price">
     <h2>Наши цены</h2>
     <table>
