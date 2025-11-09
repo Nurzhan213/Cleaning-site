@@ -5,119 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Химчистка мебели и ковров в Астане</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #fff8f0; color: #222; }
-    header { background: orange; color: white; text-align: center; padding: 40px 20px; }
-    h1 { margin: 0; font-size: 2em; }
-    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
-    .photos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .photos img { width: 45%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
-    .price { background: #fff3e0; padding: 20px; border-radius: 10px; }
-    .price table { width: 100%; border-collapse: collapse; }
-    .price th, .price td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
-    .cta { text-align: center; margin-top: 40px; }
-    .cta a { display: inline-block; background: orange; color: white; padding: 15px 30px; border-radius: 50px; font-size: 1.2em; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8f0;
+      color: #222;
+    }
+    header {
+      background: orange;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .price {
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .price table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .price th, .price td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      display: inline-block;
+      background: orange;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
     .cta a:hover { background: darkorange; }
-    form { max-width: 400px; margin: 40px auto; background: #fff3e0; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    form h3 { text-align: center; margin-bottom: 20px; }
-    label { display: block; margin-bottom: 5px; font-weight: bold; }
-    input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; }
-    button { width: 100%; background: orange; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 1em; cursor: pointer; }
+
+    form {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      background: orange;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
     button:hover { background: darkorange; }
-    footer { background: #222; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    /* 🔸 СЛАЙДЕР */
+    #before-after {
+      text-align: center;
+      padding: 40px 15px;
+      background: #fff;
+    }
+    #before-after h2 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .slider-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 550px; /* 👈 Сделал меньше */
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .slider-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #slider {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      accent-color: orange;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Химчистка мебели и ковров в Астане</h1>
     <p>Чистим прямо у вас дома — быстро, безопасно, эффективно!</p>
   </header>
 
-  <!-- 🔽 Слайдер "До / После" -->
-<section id="before-after" style="text-align:center; padding:40px 15px; background:#fff;">
-  <h2 style="font-size:2em; margin-bottom:25px; color:#333;">До / После</h2>
+  <!-- ✅ Слайдер "До / После" -->
+  <section id="before-after">
+    <h2>До / После</h2>
 
-  <div style="position:relative; display:inline-block; width:100%; max-width:700px; overflow:hidden; border-radius:16px;">
-    <img src="02.jpg" alt="До чистки" style="width:100%; height:auto; display:block;">
-    <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; height:100%;">
-      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="После чистки" style="width:100%; height:auto; display:block;">
+    <div class="slider-container">
+      <img src="02.jpg" alt="До чистки">
+      <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; height:100%;">
+        <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="После чистки">
+      </div>
+      <input type="range" id="slider" min="0" max="100" value="50">
     </div>
 
-    <input type="range" id="slider" min="0" max="100" value="50"
-      style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
-      width:70%; accent-color:orange; cursor:pointer; background:transparent;">
-  </div>
+    <p style="margin-top:30px; font-size:1.2em; color:#555;">
+      ✨ Диван стал как новый за <strong>30 минут</strong>!
+    </p>
+  </section>
 
-  <p style="margin-top:40px; font-size:1.2em; color:#555;">
-    ✨ Диван стал как новый за <strong>30 минут</strong>!
-  </p>
-</section>
-
-<script>
-  const slider = document.getElementById("slider");
-  const wrapper = document.getElementById("slider-wrapper");
-
-  slider.addEventListener("input", () => {
-    wrapper.style.width = slider.value + "%";
-  });
-</script>
-
-
-<script>
-
-document.querySelector('.next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-
-// Автоматическая прокрутка каждые 4 секунды
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}, 4000);
-</script>
-
-<section id="before-after" style="text-align:center; padding:50px 20px; background:#fff;">
-  <h2 style="font-size:2em; margin-bottom:30px; color:#333;">До / После</h2>
-
-  <div style="position:relative; display:inline-block; max-width:800px; width:100%;">
-    <img src="02.jpg" alt="До чистки" style="width:100%; display:block; border-radius:12px;">
-    <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; border-radius:12px;">
-      <img src="0124b833fc2c8c3d5733a9071c03fcd1.jpg" alt="После чистки" style="width:100%; display:block;">
-    </div>
-    <input type="range" id="slider" min="0" max="100" value="50"
-      style="position:absolute; bottom:-40px; left:50%; transform:translateX(-50%);
-      width:60%; accent-color:orange; cursor:pointer;">
-  </div>
-
-  <p style="margin-top:60px; font-size:1.3em; color:#444;">
-    ✨ Пятна и запах — исчезли за <strong>30 минут!</strong><br>
-    Ваш диван снова как новый!
-  </p>
-</section>
-
-<script>
-  const slider = document.getElementById("slider");
-  const wrapper = document.getElementById("slider-wrapper");
-  slider.addEventListener("input", () => {
-    wrapper.style.width = slider.value + "%";
-  });
-</script>
-
-
-<script>
-  const slider = document.getElementById("slider");
-  const wrapper = document.getElementById("slider-wrapper");
-  slider.addEventListener("input", () => {
-    wrapper.style.width = slider.value + "%";
-  });
-</script>
-
-  
+  <!-- ✅ Прайс -->
   <section class="price">
     <h2>Наши цены</h2>
     <table>
@@ -129,13 +172,14 @@ setInterval(() => {
     </table>
   </section>
 
+  <!-- ✅ Форма -->
   <form id="orderForm">
     <h3>Оставить заявку на чистку</h3>
     <label for="name">Ваше имя</label>
     <input type="text" id="name" name="name" placeholder="Введите имя" required>
 
     <label for="phone">Номер телефона</label>
-    <input type="tel" id="phone" name="phone" placeholder="Например: +77785553974" required>
+    <input type="tel" id="phone" name="phone" placeholder="+77785553974" required>
 
     <label for="message">Комментарий (необязательно)</label>
     <textarea id="message" name="message" placeholder="Какая мебель или ковер нуждается в чистке"></textarea>
@@ -143,42 +187,48 @@ setInterval(() => {
     <button type="submit">📲 Отправить в WhatsApp</button>
   </form>
 
+  <!-- ✅ Кнопка WhatsApp -->
   <section class="cta">
     <a href="https://wa.me/77785553974" target="_blank">📞 Написать в WhatsApp</a>
   </section>
 
+  <!-- ✅ Отзывы -->
   <section id="reviews" style="background:#fff8f0; padding:60px 20px; text-align:center;">
-  <h2 style="font-size:2em; color:#333; margin-bottom:40px;">Отзывы клиентов</h2>
+    <h2 style="font-size:2em; color:#333; margin-bottom:40px;">Отзывы клиентов</h2>
 
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1000px; margin:auto;">
-
-    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
-      <h3 style="margin:10px 0; color:#222;">Айгерим</h3>
-      <p style="color:#555;">“Думала диван уже не спасти, но после чистки — как новый! Ребята молодцы, рекомендую всем!”</p>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1000px; margin:auto;">
+      <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+        <h3>Айгерим</h3>
+        <p>“Думала диван уже не спасти, но после чистки — как новый! Ребята молодцы, рекомендую всем!”</p>
+      </div>
+      <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4333/4333602.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+        <h3>Нурлан</h3>
+        <p>“Приехали быстро, всё аккуратно, без запахов. Теперь пользуюсь только их услугами!”</p>
+      </div>
+      <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4333/4333623.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+        <h3>Асель</h3>
+        <p>“Заказала чистку ковра и матраса — всё сделали на месте, без лишней возни. Очень довольна!”</p>
+      </div>
     </div>
-
-    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333602.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
-      <h3 style="margin:10px 0; color:#222;">Нурлан</h3>
-      <p style="color:#555;">“Приехали быстро, всё аккуратно, без запахов. Теперь пользуюсь только их услугами!”</p>
-    </div>
-
-    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333623.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
-      <h3 style="margin:10px 0; color:#222;">Асель</h3>
-      <p style="color:#555;">“Заказала чистку ковра и матраса — всё сделали на месте, без лишней возни. Очень довольна!”</p>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <footer>
     <p>© 2025 Химчистка мебели и ковров в Астане | Быстро, безопасно, качественно</p>
   </footer>
 
+  <!-- ✅ Скрипты -->
   <script>
+    // Слайдер
+    const slider = document.getElementById("slider");
+    const wrapper = document.getElementById("slider-wrapper");
+    slider.addEventListener("input", () => {
+      wrapper.style.width = slider.value + "%";
+    });
+
+    // Форма WhatsApp
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
