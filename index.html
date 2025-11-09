@@ -50,6 +50,7 @@
 
 <section id="before-after" style="text-align:center; padding:50px 20px; background:#fff;">
   <h2 style="font-size:2em; margin-bottom:30px; color:#333;">До / После</h2>
+
   <div style="position:relative; display:inline-block; max-width:800px; width:100%;">
     <img src="02.jpg" alt="До чистки" style="width:100%; display:block; border-radius:12px;">
     <div id="slider-wrapper" style="position:absolute; top:0; left:0; width:50%; overflow:hidden; border-radius:12px;">
@@ -59,7 +60,21 @@
       style="position:absolute; bottom:-40px; left:50%; transform:translateX(-50%);
       width:60%; accent-color:orange; cursor:pointer;">
   </div>
+
+  <p style="margin-top:60px; font-size:1.3em; color:#444;">
+    ✨ Пятна и запах — исчезли за <strong>30 минут!</strong><br>
+    Ваш диван снова как новый!
+  </p>
 </section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const wrapper = document.getElementById("slider-wrapper");
+  slider.addEventListener("input", () => {
+    wrapper.style.width = slider.value + "%";
+  });
+</script>
+
 
 <script>
   const slider = document.getElementById("slider");
@@ -98,6 +113,33 @@
   <section class="cta">
     <a href="https://wa.me/77785553974" target="_blank">📞 Написать в WhatsApp</a>
   </section>
+
+  <section id="reviews" style="background:#fff8f0; padding:60px 20px; text-align:center;">
+  <h2 style="font-size:2em; color:#333; margin-bottom:40px;">Отзывы клиентов</h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1000px; margin:auto;">
+
+    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+      <h3 style="margin:10px 0; color:#222;">Айгерим</h3>
+      <p style="color:#555;">“Думала диван уже не спасти, но после чистки — как новый! Ребята молодцы, рекомендую всем!”</p>
+    </div>
+
+    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333602.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+      <h3 style="margin:10px 0; color:#222;">Нурлан</h3>
+      <p style="color:#555;">“Приехали быстро, всё аккуратно, без запахов. Теперь пользуюсь только их услугами!”</p>
+    </div>
+
+    <div style="background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:25px; width:280px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333623.png" alt="Клиент" style="width:80px; border-radius:50%; margin-bottom:10px;">
+      <h3 style="margin:10px 0; color:#222;">Асель</h3>
+      <p style="color:#555;">“Заказала чистку ковра и матраса — всё сделали на месте, без лишней возни. Очень довольна!”</p>
+    </div>
+
+  </div>
+</section>
+
 
   <footer>
     <p>© 2025 Химчистка мебели и ковров в Астане | Быстро, безопасно, качественно</p>
