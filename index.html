@@ -63,10 +63,6 @@
 
 
 <script>
-let currentIndex = 0;
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slider img');
-const totalSlides = slides.length;
 
 document.querySelector('.next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % totalSlides;
